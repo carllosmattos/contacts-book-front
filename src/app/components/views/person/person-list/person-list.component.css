@@ -13,6 +13,29 @@
   font-weight: 500;
 }
 
+button {
+  margin-bottom: 0.8em;
+  color: darkgreen;
+}
+
 .table {
   width: 100%;
+}
+
+.edit {
+  color: rgb(230, 214, 0);
+}
+
+.delete {
+  color: rgb(255, 30, 0);
+  margin-left: 0.5em;
+}
+
+.mat-header {
+  width: 5em;
+}
+
+.contacts {
+  margin-left: 0.3em;
+  color: cadetblue;
 }

@@ -16,6 +16,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { HomeComponent } from "./components/views/home/home.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
+import { MatButtonModule } from "@angular/material/button";
 import { PersonListComponent } from "./components/views/person/person-list/person-list.component";
 
 @NgModule({
@@ -38,6 +39,7 @@ import { PersonListComponent } from "./components/views/person/person-list/perso
     MatCardModule,
     MatTableModule,
     HttpClientModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

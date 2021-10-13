@@ -14,6 +14,7 @@ export class PersonListComponent implements OnInit {
     "surname",
     "cpf",
     "birthday",
+    "contacts",
     "actions",
   ];
 
