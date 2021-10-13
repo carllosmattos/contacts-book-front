@@ -14,6 +14,8 @@ import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { HomeComponent } from "./components/views/home/home.component";
 import { MatCardModule } from "@angular/material/card";
+import { MatTableModule } from "@angular/material/table";
+import { PersonListComponent } from "./components/person/person-list/person-list.component";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { MatCardModule } from "@angular/material/card";
     FooterComponent,
     NavComponent,
     HomeComponent,
+    PersonListComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { MatCardModule } from "@angular/material/card";
     MatListModule,
     MatIconModule,
     MatCardModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
