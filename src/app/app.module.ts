@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -15,7 +16,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { HomeComponent } from "./components/views/home/home.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
-import { PersonListComponent } from "./components/person/person-list/person-list.component";
+import { PersonListComponent } from "./components/views/person/person-list/person-list.component";
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PersonListComponent } from "./components/person/person-list/person-list
     MatIconModule,
     MatCardModule,
     MatTableModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

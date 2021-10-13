@@ -4,7 +4,7 @@
   </div>
 
   <div class="mat-elevation-z8 content-table">
-    <table class="table" mat-table>
+    <table class="table" mat-table [dataSource]="persons">
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
