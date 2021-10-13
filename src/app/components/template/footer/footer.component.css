@@ -2,9 +2,18 @@
   position: fixed;
   bottom: 0;
   justify-content: flex-end;
-  font-size: 1rem;
+  font-size: 0.8em;
+  height: 5%;
+  width: 100%;
+  background-color: darkgreen;
+  color: #fff;
 }
 
 img {
-  height: 2.5rem;
+  height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }
