@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { PersonListService } from "../person-list.service";
 import { Person } from "../person.model";
 
@@ -20,7 +21,7 @@ export class PersonListComponent implements OnInit {
 
   persons: Person[] = [];
 
-  constructor(private service: PersonListService) {}
+  constructor(private service: PersonListService, private router: Router) {}
 
   ngOnInit(): void {
     this.findAll();
@@ -31,5 +32,9 @@ export class PersonListComponent implements OnInit {
       console.log(response);
       this.persons = response;
     });
+  }
+
+  navigateToPersonCreate() {
+    this.router.navigate(["persons/create"]);
   }
 }
