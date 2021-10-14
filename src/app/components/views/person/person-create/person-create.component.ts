@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { PersonListService } from "../person-list.service";
+import { PersonService } from "../person.service";
 import { Person } from "../person.model";
 
 @Component({
@@ -9,7 +9,7 @@ import { Person } from "../person.model";
   styleUrls: ["./person-create.component.css"],
 })
 export class PersonCreateComponent implements OnInit {
-  constructor(private service: PersonListService, private router: Router) {}
+  constructor(private service: PersonService, private router: Router) {}
 
   person: Person = {
     name: "",

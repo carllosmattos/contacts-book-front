@@ -18,8 +18,8 @@ h1 {
   text-align: end;
 }
 
-.button-save {
-  color: green;
+.button-delete {
+  color: rgb(192, 3, 3);
 }
 
 button {

@@ -8,7 +8,7 @@ import { Person } from "./person.model";
 @Injectable({
   providedIn: "root",
 })
-export class PersonListService {
+export class PersonService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) {}
 
   baseUrl: String = environment.baseUrl;
@@ -18,9 +18,19 @@ export class PersonListService {
     return this.http.get<Person[]>(url);
   }
 
+  finById(id: String): Observable<Person> {
+    const url = `${this.baseUrl}/persons/${id}`;
+    return this.http.get<Person>(url);
+  }
+
   create(person: Person): Observable<Person> {
     const url = `${this.baseUrl}/persons`;
     return this.http.post<Person>(url, person);
+  }
+
+  delete(id: String): Observable<void> {
+    const url = `${this.baseUrl}/persons/${id}`;
+    return this.http.delete<void>(url);
   }
 
   message(str: String): void {

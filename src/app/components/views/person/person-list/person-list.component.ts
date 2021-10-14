@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { PersonListService } from "../person-list.service";
+import { PersonService } from "../person.service";
 import { Person } from "../person.model";
 
 @Component({
@@ -21,7 +21,7 @@ export class PersonListComponent implements OnInit {
 
   persons: Person[] = [];
 
-  constructor(private service: PersonListService, private router: Router) {}
+  constructor(private service: PersonService, private router: Router) {}
 
   ngOnInit(): void {
     this.findAll();
@@ -29,7 +29,6 @@ export class PersonListComponent implements OnInit {
 
   findAll() {
     this.service.findAll().subscribe((response) => {
-      console.log(response);
       this.persons = response;
     });
   }
