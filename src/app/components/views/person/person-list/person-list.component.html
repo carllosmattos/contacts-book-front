@@ -36,7 +36,7 @@
       <ng-container matColumnDef="contacts">
         <th mat-header-cell *matHeaderCellDef> Contatos </th>
         <td mat-cell *matCellDef="let row">
-          <a class="contacts" href="#">
+          <a class="contacts" routerLink="{{ row.id }}/contacts">
             <i class="material-icons contacts">list</i>
           </a>
         </td>

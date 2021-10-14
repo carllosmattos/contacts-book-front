@@ -25,6 +25,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { PersonDeleteComponent } from './components/views/person/person-delete/person-delete.component';
 import { PersonEditComponent } from './components/views/person/person-edit/person-edit.component';
+import { ContactListAllComponent } from './components/views/contact/contact-list-all/contact-list-all.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { PersonEditComponent } from './components/views/person/person-edit/perso
     PersonCreateComponent,
     PersonDeleteComponent,
     PersonEditComponent,
+    ContactListAllComponent,
   ],
   imports: [
     BrowserModule,
