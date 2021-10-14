@@ -1,0 +1,33 @@
+form {
+  width: 70%;
+  margin: 2em auto 0 auto;
+}
+
+.select-type-contact {
+  justify-content: start;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.form {
+  width: 100%;
+}
+
+.buttons {
+  width: 100%;
+  text-align: end;
+}
+
+.button-save {
+  color: green;
+}
+
+button {
+  margin-right: 0.5em;
+  padding-right: 2em;
+  padding-left: 2em;
+}

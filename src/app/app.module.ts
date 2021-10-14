@@ -19,13 +19,15 @@ import { MatTableModule } from "@angular/material/table";
 import { MatButtonModule } from "@angular/material/button";
 import { PersonListComponent } from "./components/views/person/person-list/person-list.component";
 import { PersonCreateComponent } from "./components/views/person/person-create/person-create.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { PersonDeleteComponent } from './components/views/person/person-delete/person-delete.component';
-import { PersonEditComponent } from './components/views/person/person-edit/person-edit.component';
-import { ContactListAllComponent } from './components/views/contact/contact-list-all/contact-list-all.component';
+import { PersonDeleteComponent } from "./components/views/person/person-delete/person-delete.component";
+import { PersonEditComponent } from "./components/views/person/person-edit/person-edit.component";
+import { ContactListAllComponent } from "./components/views/contact/contact-list-all/contact-list-all.component";
+import { ContactCreateComponent } from "./components/views/contact/contact-create/contact-create.component";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ContactListAllComponent } from './components/views/contact/contact-list
     PersonDeleteComponent,
     PersonEditComponent,
     ContactListAllComponent,
+    ContactCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,8 @@ import { ContactListAllComponent } from './components/views/contact/contact-list
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatSelectModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

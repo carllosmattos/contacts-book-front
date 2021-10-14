@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Contact } from "../contact.model";
 import { ContactService } from "../contact.service";
 
@@ -14,7 +14,11 @@ export class ContactListAllComponent implements OnInit {
 
   contacts: Contact[] = [];
 
-  constructor(private service: ContactService, private route: ActivatedRoute) {}
+  constructor(
+    private service: ContactService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.person_id = this.route.snapshot.paramMap.get("person_id")!;
@@ -26,5 +30,9 @@ export class ContactListAllComponent implements OnInit {
       this.contacts = response;
       console.log(this.contacts);
     });
+  }
+
+  navigateToCreateContact(): void {
+    this.router.navigate([`persons/${this.person_id}/contacts/create`]);
   }
 }
