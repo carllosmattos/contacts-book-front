@@ -4,12 +4,14 @@ import { PersonListComponent } from "./components/views/person/person-list/perso
 import { HomeComponent } from "./components/views/home/home.component";
 import { PersonCreateComponent } from "./components/views/person/person-create/person-create.component";
 import { PersonDeleteComponent } from "./components/views/person/person-delete/person-delete.component";
+import { PersonEditComponent } from "./components/views/person/person-edit/person-edit.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "persons", component: PersonListComponent },
   { path: "persons/create", component: PersonCreateComponent },
   { path: "persons/delete/:id", component: PersonDeleteComponent },
+  { path: "persons/update/:id", component: PersonEditComponent },
 ];
 
 @NgModule({

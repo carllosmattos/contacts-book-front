@@ -24,6 +24,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { PersonDeleteComponent } from './components/views/person/person-delete/person-delete.component';
+import { PersonEditComponent } from './components/views/person/person-edit/person-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PersonDeleteComponent } from './components/views/person/person-delete/p
     PersonListComponent,
     PersonCreateComponent,
     PersonDeleteComponent,
+    PersonEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -33,9 +33,14 @@ export class PersonService {
     return this.http.delete<void>(url);
   }
 
+  update(person: Person): Observable<void> {
+    const url = `${this.baseUrl}/persons/${person.id}`;
+    return this.http.put<void>(url, person);
+  }
+
   message(str: String): void {
     this._snack.open(`${str}`, "Ok!", {
-      horizontalPosition: "end",
+      horizontalPosition: "center",
       verticalPosition: "top",
       duration: 3000,
     });
