@@ -1,9 +1,9 @@
 <form>
-  <h1>Criar tipo de contato</h1>
+  <h1>Editar tipo de contato</h1>
 
   <mat-form-field class="select-type-contact" appearance="fill">
     <mat-label>Tipo de contato</mat-label>
-    <mat-select [(ngModel)]=contact.tipo_contato [formControl]="selected" required>
+    <mat-select [(ngModel)]=contact.tipo_contato [formControl]="selected" [disabled]="true" required>
       <mat-option (click)="selectTypeContact('EMAIL')" value="EMAIL">EMAIL</mat-option>
       <mat-option (click)="selectTypeContact('TELEFONE')" value="TELEFONE">TELEFONE</mat-option>
       <mat-option (click)="selectTypeContact('CELULAR')" value="CELULAR">CELULAR</mat-option>
@@ -19,8 +19,8 @@
   </mat-form-field>
 
   <div class="buttons">
-    <button (click)="create()" [disabled]="getMessage()" class="mat-elevation-z8 button-save"
-      mat-stroked-button>Salvar</button>
+    <button (click)="update()" [disabled]="getMessage()" class="mat-elevation-z8 button-save"
+      mat-stroked-button>Atualizar</button>
     <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button>
   </div>
 </form>

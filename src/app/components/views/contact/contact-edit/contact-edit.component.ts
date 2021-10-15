@@ -5,11 +5,11 @@ import { Contact, ContactType } from "../contact.model";
 import { ContactService } from "../contact.service";
 
 @Component({
-  selector: "app-contact-create",
-  templateUrl: "./contact-create.component.html",
-  styleUrls: ["./contact-create.component.css"],
+  selector: "app-contact-edit",
+  templateUrl: "./contact-edit.component.html",
+  styleUrls: ["./contact-edit.component.css"],
 })
-export class ContactCreateComponent implements OnInit {
+export class ContactEditComponent implements OnInit {
   person_id: String = "";
   contact: Contact = {
     id: "",
@@ -35,6 +35,8 @@ export class ContactCreateComponent implements OnInit {
   ngOnInit(): void {
     this.selectTypeContact("value");
     this.person_id = this.route.snapshot.paramMap.get("person_id")!;
+    this.contact.id = this.route.snapshot.paramMap.get("id")!;
+    this.findById();
   }
 
   selectTypeContact(value: String): void {
@@ -57,21 +59,29 @@ export class ContactCreateComponent implements OnInit {
         });
   }
 
-  create(): void {
-    this.service.create(this.contact, this.person_id).subscribe(
+  cancel(): void {
+    this.router.navigate([`persons/${this.person_id}/contacts`]);
+  }
+
+  findById(): void {
+    this.service.findById(this.contact.id!).subscribe((response) => {
+      this.contact = response;
+    });
+  }
+
+  update(): void {
+    this.service.update(this.contact).subscribe(
       () => {
         this.router.navigate([`persons/${this.person_id}/contacts`]);
-        this.service.message("Contato salvo com sucesso!");
+        this.service.message("Contato atualizado com sucesso!");
       },
       () => {
         this.router.navigate([`persons/${this.person_id}/contacts`]);
-        this.service.message("Erro ao salvar contato! Tente mais novamente!");
+        this.service.message(
+          "Erro ao atualizar contato! Tente mais novamente!"
+        );
       }
     );
-  }
-
-  cancel(): void {
-    this.router.navigate([`persons/${this.person_id}/contacts`]);
   }
 
   getMessage() {

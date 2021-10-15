@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
+import { Contact } from "../contact/contact.model";
 import { Person } from "./person.model";
 
 @Injectable({
@@ -44,5 +45,10 @@ export class PersonService {
       verticalPosition: "top",
       duration: 3000,
     });
+  }
+
+  finAllByPerson(person_id: String): Observable<Contact[]> {
+    const url = `${this.baseUrl}/contacts?person=${person_id}`;
+    return this.http.get<Contact[]>(url);
   }
 }

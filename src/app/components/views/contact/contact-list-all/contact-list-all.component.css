@@ -39,3 +39,19 @@ button {
   margin-left: 0.3em;
   color: cadetblue;
 }
+
+.spinner-load {
+  width: 20%;
+  height: 15em;
+  margin: 1em auto auto auto;
+  padding-top: 2em;
+}
+
+mat-spinner {
+  margin: auto auto auto auto;
+  padding-top: 2em;
+}
+
+p {
+  text-align: center;
+}

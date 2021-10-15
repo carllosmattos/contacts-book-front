@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { PersonService } from "../person.service";
 import { Person } from "../person.model";
+import { Contact } from "../../contact/contact.model";
 
 @Component({
   selector: "app-person-list",
@@ -21,10 +22,15 @@ export class PersonListComponent implements OnInit {
 
   persons: Person[] = [];
 
+  contacts: Contact[] = [];
+  person_id: String = "";
+  tooltip_text: String = "";
+
   constructor(private service: PersonService, private router: Router) {}
 
   ngOnInit(): void {
     this.findAll();
+    this.tooltipShow("");
   }
 
   findAll() {
@@ -35,5 +41,22 @@ export class PersonListComponent implements OnInit {
 
   navigateToPersonCreate() {
     this.router.navigate(["persons/create"]);
+  }
+
+  findAllContacts(value: string): void {
+    this.service.finAllByPerson(value).subscribe((response) => {
+      let str: string = "";
+      this.contacts = response;
+
+      this.contacts.forEach(function (value) {
+        str += value.tipo_contato + " : " + value.valor + ";\n";
+      });
+
+      this.tooltip_text = str;
+    });
+  }
+
+  tooltipShow(value: string): void {
+    this.findAllContacts(value);
   }
 }

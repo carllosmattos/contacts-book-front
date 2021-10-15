@@ -28,7 +28,6 @@ export class ContactListAllComponent implements OnInit {
   findAll(): void {
     this.service.finAllByPerson(this.person_id!).subscribe((response) => {
       this.contacts = response;
-      console.log(this.contacts);
     });
   }
 

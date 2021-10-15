@@ -28,6 +28,11 @@ import { PersonEditComponent } from "./components/views/person/person-edit/perso
 import { ContactListAllComponent } from "./components/views/contact/contact-list-all/contact-list-all.component";
 import { ContactCreateComponent } from "./components/views/contact/contact-create/contact-create.component";
 import { MatSelectModule } from "@angular/material/select";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { ContactEditComponent } from "./components/views/contact/contact-edit/contact-edit.component";
+import { ContactDeleteComponent } from "./components/views/contact/contact-delete/contact-delete.component";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -42,6 +47,8 @@ import { MatSelectModule } from "@angular/material/select";
     PersonEditComponent,
     ContactListAllComponent,
     ContactCreateComponent,
+    ContactEditComponent,
+    ContactDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +68,9 @@ import { MatSelectModule } from "@angular/material/select";
     MatSnackBarModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

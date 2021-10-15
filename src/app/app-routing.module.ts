@@ -7,6 +7,8 @@ import { PersonDeleteComponent } from "./components/views/person/person-delete/p
 import { PersonEditComponent } from "./components/views/person/person-edit/person-edit.component";
 import { ContactListAllComponent } from "./components/views/contact/contact-list-all/contact-list-all.component";
 import { ContactCreateComponent } from "./components/views/contact/contact-create/contact-create.component";
+import { ContactEditComponent } from "./components/views/contact/contact-edit/contact-edit.component";
+import { ContactDeleteComponent } from "./components/views/contact/contact-delete/contact-delete.component";
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: "persons/:person_id/contacts/create",
     component: ContactCreateComponent,
+  },
+  {
+    path: "persons/:person_id/contacts/:id/update",
+    component: ContactEditComponent,
+  },
+  {
+    path: "persons/:person_id/contacts/:id/delete",
+    component: ContactDeleteComponent,
   },
 ];
 
